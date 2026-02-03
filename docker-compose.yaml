@@ -1,0 +1,16 @@
+services:
+  app:
+    container_name: coneshare_docs
+    image: squidfunk/mkdocs-material
+    entrypoint: ["tail", "-f", "/dev/null"]
+    ports:
+      - "8800:8000"
+    networks:
+      - coneshare-docs
+    volumes:
+      - .:/docs
+
+
+networks:
+  coneshare-docs:
+    driver: bridge
