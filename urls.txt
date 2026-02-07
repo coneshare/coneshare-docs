@@ -1,6 +1,6 @@
-https://docs.coneshare.com/
-https://docs.coneshare.com/quick-start/
-https://docs.coneshare.com/settings/
-https://docs.coneshare.com/backup/
-https://docs.coneshare.com/upgrade/
-https://docs.coneshare.com/uninstall/
+https://docs.coneshare.com/en/ 
+https://docs.coneshare.com/en/quick-start/
+https://docs.coneshare.com/en/settings/
+https://docs.coneshare.com/en/backup/
+https://docs.coneshare.com/en/upgrade/
+https://docs.coneshare.com/en/uninstall/
