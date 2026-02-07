@@ -2,7 +2,7 @@ site_name: Coneshare Docs
 site_url: https://docs.coneshare.com/
 site_author: Coneshare
 site_description: >-
-  Coneshare - A self-hosted, enterprise-grade document sharing platform.
+  Coneshare provides secure document sharing, in-depth analytics, and virtual data rooms as a self-hosted alternative to DocSend.
 
 # Copyright
 copyright: Copyright &copy; 2026 Coneshare Ltd.
@@ -34,7 +34,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: white
-      accent: deep purple
+      accent: black
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
@@ -43,10 +43,10 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: deep purple
+      accent: white
       toggle:
         icon: material/weather-night
-        name: Switch to system preference
+        name: Switch to light mode
 # Plugins
 plugins:
   # - blog
@@ -108,7 +108,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
-  homepage: en/index.md
+  homepage: en/
   alternate:
     - name: English
       link: /en/ 
