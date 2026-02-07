@@ -5,7 +5,6 @@ Coneshare's behavior is controlled by two primary configuration files:
 - **`.env`**: Controls the deployment environment, such as service ports and system resource checks.
 - **`app.env`**: Configures the Coneshare application itself, including the site domain and email settings.
 
-Both files are located in your installation directory, `/opt/coneshare/coneshare-compose/`.
 
 ## **Environment Configuration (`.env`)**
 
@@ -17,7 +16,7 @@ You can customize the installation script and Docker Compose environment by crea
     docker compose version
     ```
 
-To override the default settings, create `/opt/coneshare/.env` with your desired values. This will override any defaults set within the `coneshare-compose` directory. Commonly modified parameters include:
+To override the default settings, create `/opt/coneshare/.env` with your desired values. This will override any defaults set within the `coneshare-compose/.env` file. Commonly modified parameters include:
 
 ```env
 # The host port that the service is bound to.
@@ -54,13 +53,13 @@ After saving, re-run the `install.sh` script to apply the new configuration.
 
 ## **Application Configuration (`app.env`)**
 
-The `app.env` file, located at `/opt/coneshare/coneshare-compose/app.env`, is generated during installation and contains settings specific to the Coneshare application.
+The `app.env` file, located at `/opt/coneshare/app.env`, is generated during installation and contains settings specific to the Coneshare application.
 
 ### **Site Domain**
 
 You must configure `SITE_DOMAIN` to match your server's public-facing IP address or domain name. This is critical for generating correct share links.
 
-Edit `/opt/coneshare/coneshare-compose/app.env` and set the variable:
+Edit `/opt/coneshare/app.env` and set the variable:
 ```env
 # Example: Using an IP address
 SITE_DOMAIN=http://10.8.1.1:8999
@@ -72,7 +71,7 @@ Restart the service after making changes.
 
 ### **Email Sending**
 
-Features like password resets require a configured email service. To enable this, add your SMTP server credentials to `/opt/coneshare/coneshare-compose/app.env`.
+Features like password resets require a configured email service. To enable this, add your SMTP server credentials to `/opt/coneshare/app.env`.
 
 ```env
 EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
