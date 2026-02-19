@@ -11,8 +11,11 @@ We recommend upgrading regularly to get the latest features, bug fixes, and secu
 ## **Versioning**
 
 We use [Semantic Versioning](https://semver.org/) (`MAJOR.MINOR.PATCH`).
+
 - **MAJOR** versions include significant new features or breaking changes.
+
 - **MINOR** versions add functionality in a backward-compatible manner.
+
 - **PATCH** versions include backward-compatible bug fixes.
 
 You can find the latest release on the [Coneshare Compose Releases](https://github.com/coneshare/coneshare-compose/releases) page.
