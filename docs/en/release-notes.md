@@ -53,50 +53,36 @@
 
 ### Core Features
 
-Document & Folder Management
+#### Document & Folder Management
+- **CRUD Operations**: Manage documents and folders.
+- **Robust Uploading**: Drag-and-drop files or folders, with auto-handling for duplicates.
+- **Bulk Actions**: Select and act on multiple items.
+- **Starred Items**: Favorite items for quick access.
+- **Sorting**: Sort by name or size.
 
- • Full CRUD Operations: Create, rename, move, and delete documents and folders with ease.
- • Robust Uploading: Upload individual files, or entire folder structures using drag-and-drop. Duplicate file and folder names are automatically handled by appending a numeric suffix.
- • Selection & Bulk Actions: Select multiple items to perform bulk actions like moving or deleting.
- • Starred Items: Mark important documents and folders as "starred" for quick access and filtering.
- • Sorting: Organize your view by sorting items by name or file size.
+#### Datarooms
+- **Secure Datarooms**: Group documents and folders for organized sharing.
+- **Flexible Content**: Add items to multiple folders, with per-dataroom renaming.
+- **Folder Structure**: Create nested folders within datarooms.
 
-Datarooms
+#### Secure Sharing & Access Control
+- **Shareable Links**: Generate secure links for documents or datarooms.
+- **Link Settings**: Control access with passwords, expiration dates, download permissions, and an active/inactive toggle.
+- **Viewer Identification**: Require email for access, with optional email verification.
+- **Dynamic Watermarking**: Protect content with watermarks using static text or dynamic variables (e.g., viewer IP/email).
 
- • Curated Collections: Group related documents and folders into secure Datarooms for organized sharing.
- • Flexible Content Management: A single document can be added to multiple folders within a Dataroom, acting like a shortcut. Items can be renamed and removed on a per-dataroom basis.
- • Hierarchical Structure: Create and manage a nested folder structure within each Dataroom.
+#### Analytics & Tracking
+- **Analytics Dashboard**: Summarizes recent activity and active links.
+- **Session Tracking**: Track viewer location, device, and download activity.
+- **Page-Level Analytics**: Monitor page views and duration for documents.
+- **Dataroom Tracking**: Track visits to items within a dataroom.
 
-Secure Sharing & Access Control
+#### Cloud Storage Integration
+- **Cloud Import**: Import files from Dropbox, Google Drive, and Nextcloud.
+- **OAuth2 Connections**: Securely manage cloud accounts.
 
- • Shareable Links: Generate secure, unique links for individual documents or entire Datarooms.
- • Granular Link Settings:
-    • Password Protection: Secure links with a password.
-    • Expiration: Set an expiration date and time for links to automatically become inactive.
-    • Active/Inactive Toggle: Manually enable or disable links at any time.
-    • Download Control: Allow or prevent viewers from downloading the original file.
- • Viewer Identification:
-    • Email Requirement: Optionally require viewers to provide an email address to access content.
-    • Email Verification: Enforce email verification for an additional layer of security.
- • Dynamic Watermarking:
-    • Apply dynamic watermarks to document previews and downloads to protect sensitive information.
-    • Watermarks can include static text or dynamic variables like the viewer's IP address or email.
-
-Analytics & Tracking
-
- • Central Dashboard: A main dashboard provides a summary of recent activity, including the latest view sessions and active share links.
- • View Session Tracking: See who has viewed your links, including their geographic location (country/city), device information (OS/browser), and whether they downloaded the file.
- • Granular Page-Level Analytics: For multi-page documents, see exactly which pages were viewed and for how long.
- • Dataroom Visit Tracking: Monitor visits to individual documents and folders within a Dataroom.
-
-Cloud Storage Integration
-
- • Import from Cloud: Directly import files from connected cloud storage accounts, including Dropbox, Google Drive, and self-hosted Nextcloud instances.
- • Secure Connection Management: Securely connect and manage your cloud accounts via OAuth2.
-
-⚙️ Administration & Management
-
- • Admin Panel: A dedicated admin panel for superusers to manage application-wide settings and users.
- • User Management: Admins can create, update, and delete users within their organization.
- • Login Activity: Track and review user login events for security and auditing purposes.
- • File Size Quotas: Enforce per-user storage quotas to manage system resources. Your current usage is displayed in the sidebar.
+#### Administration & Management
+- **Admin Panel**: Manage system-wide settings and users.
+- **User Management**: Full CRUD for organization users.
+- **Login Auditing**: Track user login events.
+- **Storage Quotas**: Enforce per-user storage limits.

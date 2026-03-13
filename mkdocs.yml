@@ -1,5 +1,5 @@
 site_name: Coneshare Docs
-site_url: https://docs.coneshare.com/
+site_url: https://docs.coneshare.com
 site_author: Coneshare
 site_description: >-
   Coneshare provides secure document sharing, in-depth analytics, and virtual data rooms as a self-hosted alternative to DocSend.
@@ -119,7 +119,8 @@ nav:
   - Home: en/index.md
   - Quick Start: en/quick-start.md
   - Settings: en/settings.md
+  - Reverse Proxy: en/reverse-proxy.md
   - Backup and Recovery: en/backup.md
   - Release and Upgrades: en/upgrade.md
+  - Release Notes: en/release-notes.md
   - Uninstall: en/uninstall.md
-
