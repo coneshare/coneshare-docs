@@ -4,9 +4,8 @@ For production environments, using a reverse proxy is strongly recommended. It a
 
 ### Install Letsencrypt
 
-Refer to this complete doc about how to install letsencrpt:
-[https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04](https://www.digitalocean.com/community/tutorial
-s/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
+Refer to this guide on how to install Let's Encrypt:
+[https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
 
 ### Enabling HTTPS
 
@@ -50,8 +49,6 @@ server {
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
 }
 server {
     if ($host = coneshare.example.com) {
@@ -65,4 +62,6 @@ server {
 }
 ```
 
-Finally, update SITE_DOMAIN in app.env and restart the Coneshare service.
+### Final Step
+
+Finally, update `SITE_DOMAIN` in `app.env` and restart the Coneshare service.

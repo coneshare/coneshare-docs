@@ -49,9 +49,9 @@
 
 * Ensure atomic transaction for file upload finalization ([445f2b6](https://github.com/coneshare/coneshare/commit/445f2b6fe2536e184e6d0000d7cc9e3cd4e59814))
 
-## v1.0.0
+## 1.0.0
 
-✨ Core Features
+### Core Features
 
 Document & Folder Management
 
