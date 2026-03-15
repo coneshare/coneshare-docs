@@ -119,6 +119,10 @@ nav:
   - Home: en/index.md
   - Quick Start: en/quick-start.md
   - Settings: en/settings.md
+  - Cloud File Import:
+    - Google Drive: en/google-drive-integration-guide.md
+    - Dropbox: en/dropbox-integration-guide.md
+    - Nextcloud: en/nextcloud-integration-guide.md    
   - Reverse Proxy: en/reverse-proxy.md
   - Backup and Recovery: en/backup.md
   - Release and Upgrades: en/upgrade.md
