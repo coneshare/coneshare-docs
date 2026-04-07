@@ -1,3 +1,14 @@
+## [1.1.3](https://github.com/coneshare/coneshare/compare/v1.1.2...v1.1.3) (2026-04-07)
+
+
+### Bug Fixes
+
+* **backend:** rename duplicate root uploads by resolving root folder path ([acd882a](https://github.com/coneshare/coneshare/commit/acd882acc35ec76a415cf6a359cdb4267fe048be))
+* **frontend:** align dataroom permission columns and clarify folder cascade ([679be34](https://github.com/coneshare/coneshare/commit/679be34ab678b4d6e44c121b3610ed2e02b796c7))
+* **sharelinks:** honor dataroom item watermark in view-data and render ([ce48b64](https://github.com/coneshare/coneshare/commit/ce48b640f0cfa598eda085cdbb28e2901fce384f))
+* **viewer:** stabilize initial page detection in share link preview ([4946ca4](https://github.com/coneshare/coneshare/commit/4946ca4b19f108ad0cd41ea1447add36e651e0c5))
+
+
 ## [1.1.2](https://github.com/coneshare/coneshare/compare/v1.1.1...v1.1.2) (2026-03-09)
 
 
@@ -49,7 +60,7 @@
 
 * Ensure atomic transaction for file upload finalization ([445f2b6](https://github.com/coneshare/coneshare/commit/445f2b6fe2536e184e6d0000d7cc9e3cd4e59814))
 
-## 1.0.0
+## 1.0.0 (2026-01-31)
 
 ### Core Features
 
