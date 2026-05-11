@@ -1,5 +1,28 @@
+## [1.3.1](https://github.com/coneshare/coneshare/compare/v1.3.0...v1.3.1) (2026-05-10)
+
+
+### Bug Fixes
+
+* **frontend:** add delete section in dataroom settings ([e9063e3](https://github.com/coneshare/coneshare/commit/e9063e3be11663e207dabe8549cafccd83f5a644))
+* **frontend:** fix share action in dataroom list ([d459909](https://github.com/coneshare/coneshare/commit/d45990923a8fbbd2edd1e0dd1712d3dd1a1d824e))
+* **frontend:** make dataroom viewer UI mobile friendly ([f35bfcc](https://github.com/coneshare/coneshare/commit/f35bfcc5caceaf3025f02b7a32d5db2bea01644f))
+* **frontend:** show full response errors in Delivery Logs table ([81cae4d](https://github.com/coneshare/coneshare/commit/81cae4d99af3a70c3bb2fafa89f8200e773f0f3b))
+* **sharelinks:** fix duplicated documents cause dataroom viewer 500 error ([abc483f](https://github.com/coneshare/coneshare/commit/abc483f1b35a0f3a1596940111ccc0e1cb5f6b40))
+
+
 ## [1.3.0](https://github.com/coneshare/coneshare/compare/v1.2.1...v1.3.0) (2026-05-06)
 
+Coneshare V1.3 focuses on improving the external dataroom review experience.
+
+This release introduces dataroom branding controls, including a banner image and primary/secondary/accent theme colors, so each dataroom can present a more consistent and trustworthy experience.
+
+It also adds manual mixed-item ordering, allowing owners to arrange folders and documents in the exact sequence they want reviewers to follow.
+
+Together, these updates improve both presentation quality and review efficiency, while keeping files in existing storage systems.
+
+V1.3 also includes share-link UX and backend reliability improvements, with full details in the release notes.
+
+Blog: [https://www.coneshare.com/blog/coneshare-v1-3-0-dataroom-branding-theme-ordering](https://www.coneshare.com/blog/coneshare-v1-3-0-dataroom-branding-theme-ordering)
 
 ### Features
 
