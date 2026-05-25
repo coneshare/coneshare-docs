@@ -1,0 +1,8 @@
+/* Slightly increase content readability site-wide */
+:root {
+  --md-text-font-size: 0.86rem;
+}
+
+.md-typeset {
+  font-size: 0.86rem;
+}

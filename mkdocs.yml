@@ -114,6 +114,9 @@ extra:
       link: /en/ 
       lang: en
 
+extra_css:
+  - assets/stylesheets/extra.css
+
 # Page tree
 nav:
   - Home: en/index.md
