@@ -124,6 +124,7 @@ nav:
     - Dropbox: en/dropbox-integration-guide.md
     - Nextcloud: en/nextcloud-integration-guide.md    
   - Reverse Proxy: en/reverse-proxy.md
+  - File Request Embedding: en/file-request-embedding.md
   - Backup and Recovery: en/backup.md
   - Release and Upgrades: en/upgrade.md
   - Release Notes: en/release-notes.md
