@@ -1,3 +1,32 @@
+## [1.4.0](https://github.com/coneshare/coneshare/compare/v1.3.2...v1.4.0) (2026-06-02)
+
+Coneshare V1.4 focuses on making external collaboration safer, more structured, and easier to keep in context.
+
+This release introduces Share Link Q&A for both single-document links and dataroom links, so owners and external viewers can discuss shared materials directly inside the review experience instead of moving questions into email or chat.
+
+It also adds custom intake fields for File Requests, allowing teams to collect structured metadata such as project names, case numbers, invoice details, or document types when external users upload files.
+
+For safer external document collection, V1.4 adds malware scanning to public File Request uploads, blocking risky files before they become workspace documents and emitting automation events for security follow-up.
+
+V1.4 also improves visibility and operations with share link view counts in document lists, Sentry integration support, friendlier automation messages, and a backend health check throttle fix.
+
+Together, these updates make Coneshare more useful for investor dataroom reviews, customer security reviews, client document collection, and other secure file sharing workflows.
+
+Blog: [https://www.coneshare.com/blog/coneshare-v1-4-0-share-link-qna-file-request-security-intake](https://www.coneshare.com/blog/coneshare-v1-4-0-share-link-qna-file-request-security-intake)
+
+### Features
+
+* **sharelinks:** show share link view counts in document lists ([eeec127](https://github.com/coneshare/coneshare/commit/eeec127238eda4de877dcc283739e955b24500ae))
+* **filerequests:** add custom intake fields ([4fbcd3a](https://github.com/coneshare/coneshare/commit/4fbcd3aaba5e75042a88143b1d5c64d9d24b54d1))
+* **filerequests:** add virus scan to upload documents ([44505b7](https://github.com/coneshare/coneshare/commit/44505b7e40a4fbaacd697914f8849a8f46299d45))
+* **sharelinks:** add Q&A in dataroom and document link ([406208a](https://github.com/coneshare/coneshare/commit/406208a1def4c6f45853d7bea5a5d339ef9b52ab))
+* **logging:** support Sentry integration ([d0800ac](https://github.com/coneshare/coneshare/commit/d0800ac2ea7b02ca11c7dabd34c09a491a6dec68))
+
+### Bug Fixes
+
+* **automation:** make event message more friendly ([b49acce](https://github.com/coneshare/coneshare/commit/b49acce5903e484ce92eae099b4fd1e7ff403678))
+* **backend:** fix health check throttle ([dc59c58](https://github.com/coneshare/coneshare/commit/dc59c58effb105ffdb34f874cd6b0df9877199bf))
+
 
 ## [1.3.2](https://github.com/coneshare/coneshare/compare/v1.3.1...v1.3.2) (2026-05-21)
 
