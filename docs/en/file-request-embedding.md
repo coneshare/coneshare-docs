@@ -1,5 +1,7 @@
 # Configuring File Request Embedding Behind a Reverse Proxy
 
+Coneshare [File Request]((https://www.coneshare.com/features/file-requests)) pages can be embedded into trusted external portals, client intake pages, or partner workflows. This lets external users upload files from the page they already use while Coneshare still handles secure upload collection, policy enforcement, auditability, and notifications.
+
 !!! warning "Reverse Proxy Is Required"
     This setup is supported only when Coneshare is deployed behind a front reverse proxy (for example Nginx).
     Do not configure embedding by changing container-internal web server config.
@@ -10,14 +12,17 @@ For production, control iframe embedding at the HTTPS edge (your reverse proxy).
 
 Allow iframe embedding for file request upload pages:
 
+- `/upload/<file_request_slug>`
+
+Use `?embed=1` in iframe URLs when you want the embedded layout:
+
 - `/upload/<file_request_slug>?embed=1`
 
 Keep all other Coneshare routes non-embeddable.
 
 ## Prerequisites
 
-- Reverse proxy terminates HTTPS for your public domain (for example `coneshare.example.com`)
-- Coneshare is reachable from the proxy upstream (for example `localhost:8999`)
+- [Reverse proxy](https://docs.coneshare.com/en/reverse-proxy/) terminates HTTPS for your public domain (for example `coneshare.example.com`)
 - `SITE_DOMAIN` is set correctly in `/opt/coneshare/app.env` (for example `https://coneshare.example.com`)
 
 ## Recommended Policy
