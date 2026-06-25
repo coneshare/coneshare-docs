@@ -49,7 +49,7 @@ MIN_RAM_HARD=2000
 After saving, re-run the `install.sh` script to apply the new configuration.
 
 !!! warning
-    Lowering resource requirements may lead to system instability. For production use, we recommend adhering to the default requirements for optimal performance.
+    Lowering resource requirements may lead to system instability. If you run Coneshare on a low-resource machine (e.g., 2 GB RAM), we highly recommend using client-side rendering (`PDF_PREVIEW_ENGINE=pdfjs`) and disabling Office document previews (`ENABLE_OFFICE_PREVIEW=false`) to avoid server memory exhaustion (see [Document Preview Settings](#document-preview-settings) for configuration details).
 
 ## **Application Configuration (`app.env`)**
 
@@ -98,4 +98,42 @@ Below is an example for a Gmail account:
     The `EMAIL_USE_TLS` setting depends on your provider's requirements. Port 587 typically requires TLS. For more details, see the [Django Email Settings](https://docs.djangoproject.com/en/stable/ref/settings/#email-use-tls) documentation.
 
 After adding the email configuration, restart the service.
+
+
+### **Document Preview Settings**
+
+!!! info "Added in v1.5.0"
+    Document preview capability configurations (`PDF_PREVIEW_ENGINE` and `ENABLE_OFFICE_PREVIEW`) are available starting in Coneshare **v1.5.0**.
+
+To optimize resource usage on smaller self-hosted machines, Coneshare allows you to configure document preview engines and toggle preview capabilities. This is particularly useful for reducing CPU and memory consumption.
+
+Edit `/opt/coneshare/app.env` to configure the following settings:
+
+```env
+# The engine used to render PDF documents. Options: pdfjs, server_pages
+PDF_PREVIEW_ENGINE=pdfjs
+
+# Enable/disable Microsoft Office document preview. Options: true, false
+ENABLE_OFFICE_PREVIEW=false
+```
+
+#### **Preview Engines (`PDF_PREVIEW_ENGINE`)**
+
+* **`pdfjs`**: Renders PDF documents client-side using PDF.js in the browser.
+    * *Pros*: Extremely lightweight on the server (low CPU/RAM usage), making it perfect for smaller servers (e.g., 2 CPU, 2 GB RAM).
+    * *Cons*: Page-level analytics and visual watermarking are best-effort (applied client-side) and can be bypassed by advanced users.
+
+* **`server_pages`** (Default): Renders PDF pages into images on the server.
+    * *Pros*: Enables highly secure server-rendered visual watermarks and precise page-level analytics.
+    * *Cons*: High resource utilization (CPU and memory spikes during page rendering). Previews are rendered lazily on demand when first accessed.
+
+!!! warning "Watermarking in `pdfjs` Mode"
+    In `pdfjs` mode, watermarks are applied only as a client-side visual overlay in the browser. Watermarks are **not** embedded in the actual file and will **not** be present on downloaded copies of the PDF. If you require secure, permanent watermarks on downloaded files, you must use the `server_pages` engine.
+
+#### **Office Document Preview (`ENABLE_OFFICE_PREVIEW`)**
+
+* **`false`**: Disables preview for Microsoft Office files (Word, Excel, PowerPoint), making them download-only. This eliminates the need for running a LibreOffice conversion pipeline, keeping server overhead to a minimum.
+* **`true`** (Default): Enables Office file preview by converting them to PDF and rendering pages on the server.
+    * *Requirements*: **Must** be paired with `PDF_PREVIEW_ENGINE=server_pages`. Startup configuration will reject combinations where `ENABLE_OFFICE_PREVIEW=true` but `PDF_PREVIEW_ENGINE=pdfjs`.
+    * *Resource Profiles*: Recommended only for higher-capacity deployments (minimum 4 CPU cores, 4 GB RAM) due to the heavy background conversion workload.
 

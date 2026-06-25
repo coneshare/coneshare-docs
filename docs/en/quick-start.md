@@ -10,11 +10,10 @@ Once installed, Coneshare will be accessible on port `8999` by default.
 
 Coneshare must be installed on a Linux system, such as a recent version of Ubuntu, Debian, or CentOS.
 
-The recommended minimum system resources are:
+System requirements vary depending on whether you want to run Coneshare in a lightweight mode or with full preview features enabled (configured in step 3):
 
-- 2 CPU Cores
-- 4 GB RAM
-- 20 GB of available disk space
+* **Minimum (Low-Resource Mode)**: 2 CPU Cores, 2 GB RAM, 20 GB disk space.
+* **Recommended (Full VDR Mode)**: 2 CPU Cores, 8 GB RAM, 20 GB disk space.
 
 ### Software Requirements
 
@@ -90,6 +89,25 @@ Open `/opt/coneshare/app.env` and set the domain to your server's IP address or 
 # Example: Using an IP address
 SITE_DOMAIN=http://10.8.1.1:8999
 ```
+
+#### **Document Preview Capabilities** (Starting in v1.5.0)
+
+Configure your document preview engine and toggles to match your server resources (see [System Requirements](#system-requirements)):
+
+* **For Low-Resource Mode (2 GB RAM)**:
+  Use client-side rendering (PDF.js) and disable Office previews to minimize server CPU/RAM usage.
+  ```env
+  PDF_PREVIEW_ENGINE=pdfjs
+  ENABLE_OFFICE_PREVIEW=false
+  ```
+* **For Full VDR Mode (Recommended 8 GB RAM)**:
+  Enable server-rendered pages for secure watermarking, page-level analytics, and Microsoft Office document support.
+  ```env
+  PDF_PREVIEW_ENGINE=server_pages
+  ENABLE_OFFICE_PREVIEW=true
+  ```
+
+For a complete list of preview settings, see the [Document Preview Settings](settings.md#document-preview-settings) section.
 
 ### 4. Start Coneshare
 You can now start all the Coneshare services using the `start.sh` script.
