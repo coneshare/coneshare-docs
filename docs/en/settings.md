@@ -137,3 +137,43 @@ ENABLE_OFFICE_PREVIEW=false
     * *Requirements*: **Must** be paired with `PDF_PREVIEW_ENGINE=server_pages`. Startup configuration will reject combinations where `ENABLE_OFFICE_PREVIEW=true` but `PDF_PREVIEW_ENGINE=pdfjs`.
     * *Resource Profiles*: Recommended only for higher-capacity deployments (minimum 4 CPU cores, 4 GB RAM) due to the heavy background conversion workload.
 
+
+### **Virus Scanning Settings**
+
+!!! info "Added in v1.4.0"
+    Virus scanning capability for public File Request uploads is supported starting in Coneshare **v1.4.0**.
+
+Coneshare can scan incoming files uploaded via public File Request links before they are stored in your workspace. This feature utilizes ClamAV to prevent malware from being introduced into your document libraries.
+
+To configure virus scanning, add or update the following settings in `/opt/coneshare/app.env`:
+
+```env
+# Enable/disable virus scanning. Options: true, false
+MALWARE_SCAN_ENABLED=false
+
+# ClamAV service configuration
+CLAMAV_HOST=clamav
+CLAMAV_PORT=3310
+
+# Scan timeout in milliseconds
+MALWARE_SCAN_TIMEOUT_MS=10000
+
+# Behavior if the scanner is offline/errors. Options: closed, open
+MALWARE_SCAN_FAIL_MODE=closed
+```
+
+#### **Settings Reference**
+
+* **`MALWARE_SCAN_ENABLED`**: Toggles malware scanning for public File Requests.
+* **`CLAMAV_HOST`**: Hostname or IP address of the ClamAV service (defaults to `clamav` when running within the Docker Compose network).
+* **`CLAMAV_PORT`**: Port number for ClamAV (default is `3310`).
+* **`MALWARE_SCAN_TIMEOUT_MS`**: Time limit in milliseconds for scanning requests before timing out.
+* **`MALWARE_SCAN_FAIL_MODE`**: Determines scanner fail-safe behavior:
+    * `closed` (Recommended): Rejects uploads if the scanner is unavailable or errors out.
+    * `open`: Allows uploads even if the scanner is offline or encounters an error.
+
+!!! warning "Memory Requirements"
+    Running the ClamAV service adds an additional memory overhead of **1-2 GB** on the host machine. Enable virus scanning only on deployments with at least **8 GB RAM** to maintain system stability.
+
+For details on enabling and deploying the ClamAV scanner service container, see the [File Request Virus Scan](file-request-virus-scan.md) guide.
+
