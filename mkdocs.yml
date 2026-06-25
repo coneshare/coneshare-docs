@@ -5,7 +5,7 @@ site_description: >-
   Coneshare provides secure document sharing, in-depth analytics, and virtual data rooms as a self-hosted alternative to DocSend.
 
 # Copyright
-copyright: Copyright &copy; 2026 Coneshare Ltd.
+copyright: Copyright &copy; 2026 Coneshare
 
 theme:
   name: material

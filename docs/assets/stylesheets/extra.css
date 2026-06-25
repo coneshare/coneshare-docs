@@ -6,3 +6,9 @@
 .md-typeset {
   font-size: 0.86rem;
 }
+
+/* Match admonitions and details font size to body text */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.86rem;
+}
