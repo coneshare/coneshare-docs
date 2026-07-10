@@ -1,3 +1,37 @@
+## [1.6.0](https://github.com/coneshare/coneshare/compare/v1.5.1...v1.6.0) (2026-07-09)
+
+Coneshare V1.6 focuses on professional branding customization, robust document lifecycle version control, and rich media capabilities in virtual datarooms.
+
+This release introduces full white-label branding, allowing administrators to upload custom logos and configure branding banners and themes. This provides a fully cohesive, white-labeled experience across all public-facing client screens, including password gates, email verification prompts, and shared datarooms.
+
+It also introduces granular document version history with direct restore controls—allowing users to roll back or promote any historical version to be primary—alongside direct version updating for cloud-imported files (Dropbox, Google Drive, NextCloud) while filtering out OAuth credentials to maintain metadata safety.
+
+For richer dataroom experiences, V1.6 adds interactive clickable link overlays within documents with PDF flattening to ensure consistent cross-browser signature and annotation rendering, and natively supports inline video previewing and streaming without requiring local file downloads. The main document workspace header has also been updated to support display-safe cloud import badges and inline document renaming.
+
+Together, these updates make Coneshare more customizable, controllable, and media-rich for professional virtual datarooms, diligence audits, and secure external document sharing.
+
+Blog: [https://www.coneshare.com/blog/coneshare-v1-6-0-white-label-version-control-video-streaming](https://www.coneshare.com/blog/coneshare-v1-6-0-white-label-version-control-video-streaming)
+
+
+### Features
+
+* **documents:** add version list/restore to documents ([4b986a0](https://github.com/coneshare/coneshare/commit/4b986a0090afc9bdf69e9e3c394ff9f0f8811b04))
+* **documents:** support update new version of cloud files ([928f6a3](https://github.com/coneshare/coneshare/commit/928f6a32caae94a903d270e92a4d9e3c47da4f7d))
+* **documents:** update document header, add rename operation ([59a0a73](https://github.com/coneshare/coneshare/commit/59a0a737fbe0ddf22acb3816db5e61385643ce99))
+* **datarooms:** add hybrid preview link overlay and PDF flattening ([3baa8cd](https://github.com/coneshare/coneshare/commit/3baa8cd6e1d044e5a8a4a8ff305f792753a698ce))
+* **datarooms:** support video previewing and streaming ([8e750cb](https://github.com/coneshare/coneshare/commit/8e750cb2741086c05904973adb3ad8b72d53736b))
+* **settings:** support white labeling (logo, branding etc..) ([5246aa3](https://github.com/coneshare/coneshare/commit/5246aa30a1471d62264e4bba2a68f7f090a83bc0))
+
+
+### Bug Fixes
+
+* **backend:** fix download filename issue ([c43bb20](https://github.com/coneshare/coneshare/commit/c43bb20bb02d9f7d2a97218a2e0f3788b2ec60eb))
+* **backend:** fix import gdrive internal files ([4147124](https://github.com/coneshare/coneshare/commit/41471242d8547d092cc9a8334629fde5015fedb5))
+* **backend:** fix openapi warnings ([00dbecd](https://github.com/coneshare/coneshare/commit/00dbecd0903831005f83ead3b65b601412648b83))
+* **cloudfiles:** secure import rollback on errors ([e41d00a](https://github.com/coneshare/coneshare/commit/e41d00a936d1b8bf2c718b74e89437c530bc7089))
+* **documents:** fix issue that max video priview size confilict with file preview size ([b11ece9](https://github.com/coneshare/coneshare/commit/b11ece9cffbd4d3897b2b2d766c2ca9274cbb0ab))
+
+
 ## [1.5.1](https://github.com/coneshare/coneshare/compare/v1.5.0...v1.5.1) (2026-06-30)
 
 
