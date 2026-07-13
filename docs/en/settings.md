@@ -137,6 +137,34 @@ ENABLE_OFFICE_PREVIEW=false
     * *Requirements*: **Must** be paired with `PDF_PREVIEW_ENGINE=server_pages`. Startup configuration will reject combinations where `ENABLE_OFFICE_PREVIEW=true` but `PDF_PREVIEW_ENGINE=pdfjs`.
     * *Resource Profiles*: Recommended only for higher-capacity deployments (minimum 4 CPU cores, 4 GB RAM) due to the heavy background conversion workload.
 
+### **Video Preview Settings**
+
+!!! info "Added in v1.6.0"
+    Video previewing, streaming, and concurrency settings are available starting in Coneshare **v1.6.0**.
+
+To support playing and streaming videos inside virtual datarooms without exhausting host resources (such as CPU spikes from background HLS transcoding), Coneshare allows you to configure video previews and transcode concurrency.
+
+Edit `/opt/coneshare/app.env` to configure the following settings:
+
+```env
+# Enable/disable video previews and streaming. Options: true, false
+ENABLE_VIDEO_PREVIEW=false
+
+# Number of concurrent workers for video processing. Options: 1 or more
+CELERY_VIDEO_WORKER_CONCURRENCY=1
+```
+
+#### **Video Preview (`ENABLE_VIDEO_PREVIEW`)**
+
+* **`false`** (Default): Disables inline video previewing and HLS segment generation entirely. Shared videos will be download-only. This is recommended for lightweight self-hosted machines to protect resources.
+* **`true`**: Enables video streaming and previews. Video files are segmented into HLS streams dynamically on demand when first accessed.
+    * *Resource Profiles*: Highly CPU-intensive. Recommended only for larger server configurations.
+
+#### **Video Worker Concurrency (`CELERY_VIDEO_WORKER_CONCURRENCY`)**
+
+* **`1`** (Default): Restricts the dedicated video transcoding queue to a single worker process at a time. This keeps background video transcoding from seizing all available CPU resources, ensuring the rest of the web application remains responsive.
+* **Higher values** (e.g. `2`, `4`): Spawns multiple transcode worker processes to speed up segment generation for multiple concurrent video previews. Only use this on high-capacity servers with multiple CPU cores dedicated to media processing.
+
 
 ### **Virus Scanning Settings**
 
