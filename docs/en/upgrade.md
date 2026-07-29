@@ -34,10 +34,10 @@ The upgrade process uses `git` to pull the latest version and the installation s
     git fetch --all --tags
     ```
 
-3.  **Check out the version you want to upgrade to.** Replace `1.1.0` with your target version tag.
+3.  **Check out the version you want to upgrade to.** Replace `1.7.1` with your target version tag.
     ```sh
-    # Example: Check out version 1.1.0
-    git checkout 1.1.0
+    # Example: Check out version 1.7.1
+    git checkout 1.7.1
     ```
 
 4.  **Run the installation script.** This script pulls the latest Docker images and performs necessary data migrations.
@@ -52,25 +52,30 @@ The upgrade process uses `git` to pull the latest version and the installation s
 
 Your Coneshare instance is now upgraded.
 
-## **Upgrade Paths for Major Versions**
+## **Rolling / Nightly Builds (Edge Channel)**
 
-When upgrading across multiple major or minor versions, you may need to upgrade to specific intermediate versions first. These "hard stops" are necessary to ensure critical database migrations are applied correctly.
+Coneshare automatically generates rolling builds on every commit to the `main` branch, allowing you to test and preview the latest unreleased features before an official tag is released.
 
-Skipping a hard stop can lead to a broken installation.
+1.  **Navigate to your installation directory:**
+    ```sh
+    cd /opt/coneshare/coneshare-compose
+    ```
 
-### **Hard Stops**
-When upgrading, you must upgrade to **each** hard stop in order between your current version and your target version.
+2.  **Fetch and check out the latest `main` branch:**
+    ```sh
+    git fetch origin
+    git checkout main
+    git pull origin main
+    ```
 
--   `1.0.0`
--   `1.2.0`
--   *(More versions will be added here as they become hard stops)*
+3.  **Run the installation and restart scripts:**
+    ```sh
+    ./install.sh
+    ./start.sh
+    ```
 
-For example, to upgrade from `0.9.0` to `1.3.0`, you must follow this path:
-```
-# Example Path
-0.9.0 -> 1.0.0 -> 1.2.0 -> 1.3.0
-```
-For each step in the path, you must follow the full [Standard Upgrade Process](#standard-upgrade-process).
+!!! warning "Use at Your Own Risk"
+    Rolling builds contain unreleased code and bleeding-edge updates. They are intended for testing and previewing new features and may contain unresolved bugs or breaking changes. **Do not use rolling builds in critical production environments**, and always ensure you have a fresh [backup](backup.md) before upgrading.
 
 ## **Downgrading**
 
