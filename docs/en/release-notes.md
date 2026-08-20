@@ -1,5 +1,17 @@
 ## [1.8.0](https://github.com/coneshare/coneshare/compare/v1.7.1...v1.8.0) (2026-08-18)
 
+Coneshare V1.8 focuses on connecting self-hosted datarooms and document workflows to AI development tools and international teams, while adding safeguards against accidental data loss.
+
+This release introduces the official Remote MCP Server (`coneshare-mcp`), allowing AI coding assistants and desktop LLM clients (Claude Desktop, Claude Code CLI, Antigravity CLI, Codex) to interact directly with your workspace over streamable HTTP/SSE (`/mcp/sse`). With 27 built-in MCP tools, AI agents can create datarooms, organize folders, generate access-controlled share links, stream uploads directly to storage via pre-signed URLs, and inspect viewer analytics.
+
+To secure external integrations, V1.8 adds developer API keys with three permission tiers (`read_only`, `read_write`, `full_access`). Keys are protected with one-way HMAC-SHA256 hashing, and the settings page includes copy-paste setup configs for common AI clients.
+
+For global collaboration, V1.8 brings native multi-language support (English, Simplified Chinese, and Russian) across the web interface, system error messages, and automated email notifications. It also introduces a workspace Trash bin, allowing team members to review deleted files and restore them back to their original folder paths.
+
+Together, these updates make Coneshare programmable for AI agents, accessible to global teams, and safer for day-to-day document management.
+
+Blog: [https://www.coneshare.com/blog/coneshare-v1-8-0-remote-mcp-server-api-keys-i18n-trash](https://www.coneshare.com/blog/coneshare-v1-8-0-remote-mcp-server-api-keys-i18n-trash)
+
 
 ### Features
 

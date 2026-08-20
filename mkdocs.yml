@@ -122,6 +122,7 @@ nav:
   - Home: en/index.md
   - Quick Start: en/quick-start.md
   - Settings: en/settings.md
+  - Remote MCP Server: en/mcp-server.md
   - Cloud File Import:
     - Google Drive: en/google-drive-integration-guide.md
     - Dropbox: en/dropbox-integration-guide.md

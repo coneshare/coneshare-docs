@@ -205,3 +205,32 @@ MALWARE_SCAN_FAIL_MODE=closed
 
 For details on enabling and deploying the ClamAV scanner service container, see the [File Request Virus Scan](file-request-virus-scan.md) guide.
 
+### **Remote MCP Server Settings**
+
+!!! info "Added in v1.8.0"
+    Remote Model Context Protocol (MCP) server configurations are available starting in Coneshare **v1.8.0**.
+
+To configure the communication parameters for the `coneshare-mcp` service, edit `/opt/coneshare/app.env`:
+
+```env
+# ------------------------------------------------------------------------------
+# Remote MCP Server (coneshare-mcp)
+# ------------------------------------------------------------------------------
+# Target REST API URL as seen from mcp_server container
+CONESHARE_API_URL=http://web:80/api/v1
+
+# Transport mode (streamable-http or sse)
+MCP_TRANSPORT=streamable-http
+
+# HTTP SSE endpoint path
+MCP_PATH=/mcp/sse
+```
+
+#### **Settings Reference**
+
+* **`CONESHARE_API_URL`**: Target REST API endpoint accessed by the MCP server inside the Docker network (default: `http://web:80/api/v1`).
+* **`MCP_TRANSPORT`**: Transport protocol mode for the MCP server. Options: `streamable-http` (recommended) or `sse`.
+* **`MCP_PATH`**: The URL path for the SSE stream endpoint (default: `/mcp/sse`).
+
+For complete reverse proxy setup, Nginx configurations, and AI client connection guides, see the [Remote MCP Server](mcp-server.md) documentation.
+

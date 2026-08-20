@@ -62,6 +62,9 @@ server {
 }
 ```
 
+!!! info "AI Agent & Remote MCP Server Setup"
+    If you wish to expose the optional Remote MCP Server for AI agents (Claude, Codex, Antigravity), see the full Nginx configuration in the [Remote MCP Server Configuration](mcp-server.md) guide.
+
 ### Final Step
 
 Finally, update `SITE_DOMAIN` in `app.env` and restart the Coneshare service.
