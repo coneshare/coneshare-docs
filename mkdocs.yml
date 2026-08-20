@@ -122,12 +122,14 @@ nav:
   - Home: en/index.md
   - Quick Start: en/quick-start.md
   - Settings: en/settings.md
+  - Reverse Proxy:
+    - Nginx Setup: en/reverse-proxy.md
+    - Bot & Scanner Protection (Fail2ban): en/fail2ban.md
   - Remote MCP Server: en/mcp-server.md
   - Cloud File Import:
     - Google Drive: en/google-drive-integration-guide.md
     - Dropbox: en/dropbox-integration-guide.md
     - Nextcloud: en/nextcloud-integration-guide.md    
-  - Reverse Proxy: en/reverse-proxy.md
   - File Request Embedding: en/file-request-embedding.md
   - File Request Virus Scan: en/file-request-virus-scan.md
   - Backup and Recovery: en/backup.md

@@ -65,6 +65,9 @@ server {
 !!! info "AI Agent & Remote MCP Server Setup"
     If you wish to expose the optional Remote MCP Server for AI agents (Claude, Codex, Antigravity), see the full Nginx configuration in the [Remote MCP Server Configuration](mcp-server.md) guide.
 
+!!! tip "Bot & Vulnerability Scanner Protection (Fail2ban)"
+    Public-facing web instances are frequently scanned by automated bots probing for `.env` files, PHP scripts, and sensitive paths. We strongly recommend setting up **Fail2ban** on your reverse proxy host to automatically ban scanner IPs. See the [Bot & Scanner Protection (Fail2ban)](fail2ban.md) guide.
+
 ### Final Step
 
 Finally, update `SITE_DOMAIN` in `app.env` and restart the Coneshare service.
