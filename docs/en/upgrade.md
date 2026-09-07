@@ -34,10 +34,10 @@ The upgrade process uses `git` to pull the latest version and the installation s
     git fetch --all --tags
     ```
 
-3.  **Check out the version you want to upgrade to.** Replace `1.8.0` with your target version tag.
+3.  **Check out the version you want to upgrade to.** Replace `1.9.0` with your target version tag.
     ```sh
-    # Example: Check out version 1.8.0
-    git checkout 1.8.0
+    # Example: Check out version 1.9.0
+    git checkout v1.9.0
     ```
 
 4.  **Run the installation script.** This script pulls the latest Docker images and performs necessary data migrations.
