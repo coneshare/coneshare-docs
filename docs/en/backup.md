@@ -25,10 +25,10 @@ docker exec -t coneshare-postgres pg_dumpall -c -U postgres | gzip > coneshare-d
 ```
 
 ### **3. Back Up Data Files**
-This command archives and compresses the `data` and `media` directories, which contain all user-uploaded files.
+This command archives the `data` and `media` directories, which contain all user-uploaded files.
 ```sh
-# This creates a file like coneshare-files_2024-10-26_14_30_00.tar.gz
-tar czf coneshare-files_`date +%Y-%m-%d"_"%H_%M_%S`.tar.gz data media
+# This creates a file like coneshare-files_2024-10-26_14_30_00.tar
+tar cf coneshare-files_`date +%Y-%m-%d"_"%H_%M_%S`.tar data media
 ```
 
 ### **4. Back Up Configuration Files**
@@ -46,7 +46,7 @@ Once the backups are complete, you can restart the services.
 ```sh
 ./start.sh
 ```
-Store your backup files (`.sql.gz`, `.tar.gz`, and config files) in a secure, remote location.
+Store your backup files (`.sql.gz`, `.tar`, and config files) in a secure, remote location.
 
 ---
 
@@ -58,7 +58,7 @@ Use the following steps to restore a Coneshare instance from your backup files.
     Restoring from a backup will **completely overwrite** all existing data in your current Coneshare instance.
 
 ### **1. Prepare for Restore**
-Place your backup files (`.sql.gz`, `.tar.gz`, `app.env`, `.env`) in the root of your installation directory (`/opt/coneshare`).
+Place your backup files (`.sql.gz`, `.tar`, `app.env`, `.env`) in the root of your installation directory (`/opt/coneshare`).
 
 ### **2. Stop the Services**
 Ensure all services are stopped before restoring.
@@ -78,14 +78,14 @@ cp backups/.env .
 ### **4. Restore Data Files**
 This command removes the existing `data` and `media` directories and then extracts your backup archive.
 ```sh
-# Make sure your backup file (e.g., coneshare-files_....tar.gz) is in the current directory
-FILES_BACKUP_FILE=$(ls -t coneshare-files_*.tar.gz | head -1)
+# Make sure your backup file (e.g., coneshare-files_....tar) is in the current directory
+FILES_BACKUP_FILE=$(ls -t coneshare-files_*.tar | head -1)
 
 # Remove old directories
 rm -rf data media
 
 # Extract the backup
-tar xzf $FILES_BACKUP_FILE
+tar xf $FILES_BACKUP_FILE
 ```
 
 ### **5. Restore the Database**
