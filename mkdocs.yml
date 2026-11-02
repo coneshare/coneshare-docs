@@ -122,6 +122,7 @@ nav:
   - Home: en/index.md
   - Quick Start: en/quick-start.md
   - Settings: en/settings.md
+  - Logging & Log Viewer: en/logging.md
   - Reverse Proxy:
     - Nginx Setup: en/reverse-proxy.md
     - Bot & Scanner Protection (Fail2ban): en/fail2ban.md

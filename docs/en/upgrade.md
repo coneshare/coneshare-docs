@@ -45,6 +45,9 @@ The upgrade process uses `git` to pull the latest version and the installation s
     ./install.sh
     ```
 
+!!! warning "Notice for Version 1.11.0+: Log Retention During Upgrades"
+    Starting with v1.11.0, Coneshare implements a 12-factor container-native logging architecture. Running `./install.sh` tears down old containers, which automatically clears prior container logs. If you need to preserve historical logs across version upgrades, archive them or deploy a log aggregator (such as **Dozzle** or **ELK**) before running `./install.sh`. See the [Logging & Log Viewer](logging.md) guide for setup instructions.
+
 5.  **Restart the services** to apply the changes.
     ```sh
     ./start.sh
