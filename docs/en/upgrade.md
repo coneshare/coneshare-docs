@@ -34,10 +34,10 @@ The upgrade process uses `git` to pull the latest version and the installation s
     git fetch --all --tags
     ```
 
-3.  **Check out the version you want to upgrade to.** Replace `1.10.1` with your target version tag.
+3.  **Check out the version you want to upgrade to.** Replace `1.11.0` with your target version tag.
     ```sh
-    # Example: Check out version 1.10.1
-    git checkout v1.10.1
+    # Example: Check out version 1.11.0
+    git checkout v1.11.0
     ```
 
 4.  **Run the installation script.** This script pulls the latest Docker images and performs necessary data migrations.

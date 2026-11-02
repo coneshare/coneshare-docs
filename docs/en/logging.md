@@ -100,6 +100,11 @@ docker compose up -d dozzle
 
 Open `http://<your-server-ip>:8888` (or configure an Nginx reverse proxy block with basic authentication) to access your log viewer.
 
+[![Dozzle Log Viewer]][Dozzle Log Viewer]
+
+  [Dozzle Log Viewer]: ../assets/screenshots/dozzle.png
+
+
 ---
 
 ## **4. Alternative: Archiving Logs Prior to Upgrade**

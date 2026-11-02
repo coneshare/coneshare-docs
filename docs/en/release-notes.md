@@ -1,5 +1,11 @@
 ## [1.11.0](https://github.com/coneshare/coneshare/compare/v1.10.1...v1.11.0) (2026-11-02)
 
+Coneshare V1.11 overhauls the external virtual dataroom experience with a modern customer portal layout, featured deal resource highlights, and flexible viewing modes. Visitors can now navigate deal rooms with dedicated hero banners, structured folder cards, and path breadcrumbs.
+
+This release introduces banner gallery carousel modes, per-dataroom brand logo overrides, whole-dataroom streaming ZIP downloads, verified email tracking on audit logs, 12-factor container-native logging, full Dutch language localization, and important security updates.
+
+Blog: [https://www.coneshare.com/blog/coneshare-v1-11-0-dataroom-redesign-banner-gallery-download-all](https://www.coneshare.com/blog/coneshare-v1-11-0-dataroom-redesign-banner-gallery-download-all)
+
 
 ### Features
 
