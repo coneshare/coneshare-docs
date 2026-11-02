@@ -71,6 +71,19 @@ Dozzle is an open-source, ultra-lightweight (~15MB RAM), zero-configuration web 
 
 #### **Setting Up Dozzle with Coneshare**
 
+##### **Option A: Quick Start (Single Command)**
+For an immediate setup without editing compose files, start Dozzle with a single `docker run` command:
+
+```sh
+docker run -d \
+  --name coneshare-dozzle \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v dozzle_data:/data \
+  -p 8800:8080 \
+  amir20/dozzle:latest
+```
+
+##### **Option B: Docker Compose (Persistent Service)**
 You can deploy Dozzle alongside Coneshare by adding a `dozzle` service to your `docker-compose.yaml` (or in a `docker-compose.override.yaml` file):
 
 ```yaml
@@ -82,14 +95,18 @@ services:
     volumes:
       # Mount the Docker daemon socket as read-only
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - dozzle_data:/data
     ports:
       # Bind to localhost (recommended) or your desired internal port
-      - "127.0.0.1:8888:8080"
+      - "127.0.0.1:8800:8080"
     environment:
       DOZZLE_LEVEL: info
       DOZZLE_NO_ANALYTICS: "true"
       # Optional: Restrict Dozzle to display only Coneshare containers
       DOZZLE_FILTER: "name=coneshare-*"
+
+volumes:
+  dozzle_data:
 ```
 
 After updating the compose configuration, start Dozzle:
@@ -98,7 +115,7 @@ After updating the compose configuration, start Dozzle:
 docker compose up -d dozzle
 ```
 
-Open `http://<your-server-ip>:8888` (or configure an Nginx reverse proxy block with basic authentication) to access your log viewer.
+Open `http://<your-server-ip>:8800` (or configure an Nginx reverse proxy block with basic authentication) to access your log viewer.
 
 [![Dozzle Log Viewer]][Dozzle Log Viewer]
 
